@@ -4,11 +4,11 @@ import reset from 'styled-reset';
 export const GlobalStyle = createGlobalStyle`
   ${reset}
 
-  body {
-    font-size: 62.5%;
-  }
-
   * {
     box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
   }
 `;
