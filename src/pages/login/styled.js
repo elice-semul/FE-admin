@@ -13,17 +13,21 @@ export const Title = styled.h1`
   color: ${({ theme: { colors } }) => colors.primary};
 `;
 
+export const InputContainer = styled.div`
+  margin: 0.5rem 0 0.4rem;
+  border-bottom: 1px solid ${({ theme: { colors } }) => colors.gray300};
+  padding-bottom: 0.5rem;
+  display: flex;
+`;
+
 export const Form = styled.form`
   margin-top: 3.2rem;
   display: flex;
   flex-direction: column;
-`;
 
-export const InputContainer = styled.div`
-  margin: 0.5rem 0 1.5rem;
-  border-bottom: 1px solid ${({ theme: { colors } }) => colors.gray300};
-  padding-bottom: 0.5rem;
-  display: flex;
+  ${InputContainer}+${InputContainer} {
+    margin-top: 1.4rem;
+  }
 `;
 
 export const Input = styled.input`
@@ -31,6 +35,10 @@ export const Input = styled.input`
   width: 100%;
   outline: none;
   font-size: 1.6rem;
+`;
+
+export const RequiredText = styled.span`
+  color: ${({ theme }) => theme.colors.warning};
 `;
 
 export const JoinButton = styled.button`

@@ -11,4 +11,14 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
   }
+
+  body {
+    position: relative;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
 `;
