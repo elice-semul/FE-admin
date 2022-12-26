@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledModalLayout = styled.div`
+export const ModalLayout = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
@@ -12,7 +12,7 @@ export const StyledModalLayout = styled.div`
   background-color: rgba(0, 0, 0, 0.35);
 `;
 
-export const StyledModalContentContainer = styled.div`
+export const ModalContentContainer = styled.div`
   padding: 2.4rem;
   width: 46rem;
   height: auto;
@@ -24,7 +24,7 @@ export const StyledModalContentContainer = styled.div`
   cursor: default;
 `;
 
-export const StyledModalTitle = styled.h2`
+export const ModalTitle = styled.h2`
   min-height: 3.6rem;
   margin: 0px 0px 1.2rem;
   font-size: 2.4rem;
@@ -33,18 +33,18 @@ export const StyledModalTitle = styled.h2`
   overflow-wrap: break-word;
 `;
 
-export const StyledModalDesc = styled.p`
+export const ModalDesc = styled.p`
   margin-bottom: 2.4rem;
   display: flex;
   font-size: 1.6rem;
 `;
 
-export const StyledButtonContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
 
-export const StyledModalButton = styled.button`
+export const ModalButton = styled.button`
   padding: 1.2rem 2rem;
   color: ${({ theme }) => theme.colors.background};
   background-color: ${({ theme }) => theme.colors.primary};

@@ -5,23 +5,18 @@ import {
   Title,
   Strong,
   BoardContainer,
-  BoardHeaderList,
-  BoardHeaderItem,
   BoardContentList,
   BoardContentItem,
   ButtonContainer,
   ContentButton,
 } from './styled';
 
-import { Menu } from '@/components';
-import { categoryMock } from '@/mocks/category';
+import { Menu, Partners, Users } from '@/components';
+import Category from '@/components/category/category';
+import withLoginConfirm from '@/hocs/withLoginConfirm';
 
 const Home = () => {
   const [menuStatus, setMenuStatus] = useState('price');
-
-  const mapedCategoryMock = categoryMock[menuStatus].map((el, index) => (
-    <BoardHeaderItem key={index}>{el}</BoardHeaderItem>
-  ));
 
   return (
     <Container>
@@ -30,176 +25,10 @@ const Home = () => {
       </Title>
       <Menu onSetMenuStatus={setMenuStatus} />
       <BoardContainer>
-        <BoardHeaderList>{mapedCategoryMock}</BoardHeaderList>
-        <BoardContentList>
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
-          <BoardContentItem>
-            <div>코트</div>
-            <div>5000원</div>
-            <ButtonContainer>
-              <ContentButton type="button">수정</ContentButton>
-              <ContentButton type="button">삭제</ContentButton>
-            </ButtonContainer>
-          </BoardContentItem>{' '}
+        <Category {...{ menuStatus }} />
+        {menuStatus === 'users' && <Users />}
+        {menuStatus === 'partners' && <Partners />}
+        {/* <BoardContentList>
           <BoardContentItem>
             <div>코트</div>
             <div>5000원</div>
@@ -208,10 +37,12 @@ const Home = () => {
               <ContentButton type="button">삭제</ContentButton>
             </ButtonContainer>
           </BoardContentItem>
-        </BoardContentList>
+        </BoardContentList> */}
       </BoardContainer>
     </Container>
   );
 };
 
-export default Home;
+const HomePage = withLoginConfirm(Home);
+
+export default HomePage;

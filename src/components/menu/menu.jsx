@@ -1,6 +1,6 @@
 import { Nav, MenuButton } from './styled';
 
-import { menuMock } from '@/mocks/category';
+import { menuMock } from '@/mocks/mocks';
 
 const Menu = ({ onSetMenuStatus }) => {
   const handleMenuButtonClick = (category) => {

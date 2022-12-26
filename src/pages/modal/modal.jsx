@@ -1,10 +1,10 @@
 import {
-  StyledModalTitle,
-  StyledModalDesc,
-  StyledButtonContainer,
-  StyledModalButton,
-  StyledModalLayout,
-  StyledModalContentContainer,
+  ModalTitle,
+  ModalDesc,
+  ButtonContainer,
+  ModalButton,
+  ModalLayout,
+  ModalContentContainer,
 } from './styled';
 
 const Modal = ({ onSetIsShowingModal, error }) => {
@@ -18,17 +18,17 @@ const Modal = ({ onSetIsShowingModal, error }) => {
   };
 
   return (
-    <StyledModalLayout onClick={handleModalLayoutClick}>
-      <StyledModalContentContainer onClick={handleModalContentContainer}>
-        <StyledModalTitle>{error.message}</StyledModalTitle>
-        <StyledModalDesc>{error.message}</StyledModalDesc>
-        <StyledButtonContainer>
-          <StyledModalButton type="button" onClick={handleModalLayoutClick}>
+    <ModalLayout onClick={handleModalLayoutClick}>
+      <ModalContentContainer onClick={handleModalContentContainer}>
+        <ModalTitle>{error.message}</ModalTitle>
+        <ModalDesc>{error.message}</ModalDesc>
+        <ButtonContainer>
+          <ModalButton type="button" onClick={handleModalLayoutClick}>
             확인
-          </StyledModalButton>
-        </StyledButtonContainer>
-      </StyledModalContentContainer>
-    </StyledModalLayout>
+          </ModalButton>
+        </ButtonContainer>
+      </ModalContentContainer>
+    </ModalLayout>
   );
 };
 

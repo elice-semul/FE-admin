@@ -23,16 +23,6 @@ export const BoardContainer = styled.div`
   max-height: 772px;
 `;
 
-export const BoardHeaderList = styled.ul`
-  padding: 0 3.2rem;
-  display: flex;
-  gap: 12rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-`;
-
-export const BoardHeaderItem = styled.li``;
-
 export const BoardContentList = styled.ul`
   margin-top: 3.2rem;
   height: 100%;
