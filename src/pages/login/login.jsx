@@ -5,6 +5,7 @@ import { Container, Title, Form, InputContainer, Input, RequiredText, JoinButton
 
 import useLogin from '@/hooks/useLogin';
 import PortalModal from '@/portals/portalModal';
+import { getErrorMessage } from '@/utils/errorMessage';
 
 const Login = () => {
   const {
@@ -56,7 +57,10 @@ const Login = () => {
         </JoinButton>
       </Form>
       {isShowingModal && (
-        <PortalModal onSetIsShowingModal={setIsShowingModal} error={loginAdmin.error} />
+        <PortalModal
+          onSetIsShowingModal={setIsShowingModal}
+          text={getErrorMessage(loginAdmin.error)}
+        />
       )}
     </Container>
   );

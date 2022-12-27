@@ -1,13 +1,21 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useState } from 'react';
 
-import { getUsers } from '@/apis/users';
+import { deleteUser, getUsers } from '@/apis/users';
 
 const useUsers = () => {
-  const { data, isLoading, isFetching } = useQuery(['users'], getUsers, {
+  const [isShowingModal, setIsShowingModal] = useState(false);
+  const queryClient = useQueryClient();
+
+  const { data, isLoading } = useQuery(['users'], getUsers, {
     staleTime: 1000 * 60,
   });
 
-  return { data, isLoading, isFetching };
+  const removeUser = useMutation(['users'], deleteUser, {
+    onSuccess: () => queryClient.invalidateQueries(['users']),
+  });
+
+  return { isShowingModal, setIsShowingModal, data, isLoading, removeUser };
 };
 
 export default useUsers;

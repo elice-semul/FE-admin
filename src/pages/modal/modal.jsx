@@ -7,7 +7,7 @@ import {
   ModalContentContainer,
 } from './styled';
 
-const Modal = ({ onSetIsShowingModal, error }) => {
+const Modal = ({ onSetIsShowingModal, text }) => {
   const handleModalLayoutClick = (event) => {
     event.stopPropagation();
     onSetIsShowingModal(false);
@@ -20,8 +20,7 @@ const Modal = ({ onSetIsShowingModal, error }) => {
   return (
     <ModalLayout onClick={handleModalLayoutClick}>
       <ModalContentContainer onClick={handleModalContentContainer}>
-        <ModalTitle>{error.message}</ModalTitle>
-        <ModalDesc>{error.message}</ModalDesc>
+        <ModalDesc>{text}</ModalDesc>
         <ButtonContainer>
           <ModalButton type="button" onClick={handleModalLayoutClick}>
             확인

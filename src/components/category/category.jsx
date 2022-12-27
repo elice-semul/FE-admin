@@ -2,8 +2,8 @@ import { BoardHeaderList, BoardHeaderItem } from './styled';
 
 import { categoryMock } from '@/mocks/mocks';
 
-const Category = ({ menuStatus }) => {
-  const mapedCategoryMock = categoryMock[menuStatus].map((el, index) => (
+const Category = ({ status }) => {
+  const mapedCategoryMock = categoryMock[status].map((el, index) => (
     <BoardHeaderItem key={index}>{el}</BoardHeaderItem>
   ));
 

@@ -20,17 +20,6 @@ export const ContentList = styled.ul`
   }
 `;
 
-export const ContentItem = styled.li`
-  padding: 3.2rem 2.6rem 3.2rem 3.2rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 6rem;
-  font-size: 1.6rem;
-  font-weight: 400;
-`;
-
 export const ContentCell = styled.div`
   flex-basis: 200px;
 `;

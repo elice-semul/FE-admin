@@ -1,6 +1,6 @@
 import { Spinner } from '@/components';
 import { usePartners } from '@/hooks';
-import { ContentList, ContentItem, ContentCell } from '@/styles/content';
+import { ContentList } from '@/styles/content';
 
 const Partners = () => {
   const { data, isLoading } = usePartners();
@@ -19,10 +19,8 @@ const Partners = () => {
 
   return (
     <ContentList>
-      <ContentItem>
-        <div>코트</div>
-        <div>5000원</div>
-      </ContentItem>
+      <div>코트</div>
+      <div>5000원</div>
     </ContentList>
   );
 };
