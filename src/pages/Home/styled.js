@@ -16,7 +16,7 @@ export const Strong = styled.span`
   color: ${({ theme: { colors } }) => colors.primary};
 `;
 
-export const BoardContainer = styled.div`
+export const BoardWrapper = styled.div`
   margin-top: 6.4rem;
   width: 100%;
   height: 100%;

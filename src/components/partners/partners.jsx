@@ -1,15 +1,15 @@
 import { Spinner } from '@/components';
 import { usePartners } from '@/hooks';
-import { ContentList } from '@/styles/content';
+import { BoardContainer } from '@/styles/board';
 
 const Partners = () => {
   const { data, isLoading } = usePartners();
 
   if (isLoading) {
     return (
-      <ContentList>
+      <BoardContainer>
         <Spinner />
-      </ContentList>
+      </BoardContainer>
     );
   }
 
@@ -18,10 +18,10 @@ const Partners = () => {
   }
 
   return (
-    <ContentList>
+    <BoardContainer>
       <div>코트</div>
       <div>5000원</div>
-    </ContentList>
+    </BoardContainer>
   );
 };
 
