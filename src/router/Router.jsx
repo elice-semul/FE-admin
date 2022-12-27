@@ -1,11 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Home } from '@/pages';
+import App from '@/App';
+import { HomePage, Login } from '@/pages';
 
-export function Router() {
+const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<App />}>
+        <Route index element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+      </Route>
     </Routes>
   );
-}
+};
+
+export default Router;

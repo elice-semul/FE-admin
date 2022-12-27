@@ -1,5 +1,21 @@
-import { Router } from '@/router';
+import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
 
-export function App() {
-  return <Router />;
-}
+const Container = styled.div`
+  margin: 0 auto;
+  width: 1440px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const App = () => {
+  return (
+    <Container>
+      <Outlet />
+    </Container>
+  );
+};
+
+export default App;
