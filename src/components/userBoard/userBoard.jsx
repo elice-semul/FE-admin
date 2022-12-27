@@ -1,5 +1,5 @@
-import { BoardItem } from '@/components/ui';
-import { ContentList, ContentCell } from '@/styles/content';
+import { BoardRow } from '@/components/ui';
+import { BoardContainer, BoardColumn } from '@/styles/board';
 import { getKoreanDateByDate } from '@/utils/date';
 
 const UserBoard = ({ data, status, onRemove: handleRemove }) => {
@@ -14,19 +14,19 @@ const UserBoard = ({ data, status, onRemove: handleRemove }) => {
       wallet: { money },
     }) => {
       return (
-        <BoardItem key={id} {...{ id }} {...{ status }} onRemove={handleRemove}>
-          <ContentCell>{name}</ContentCell>
-          <ContentCell>{email}</ContentCell>
-          <ContentCell>{phoneNumber}</ContentCell>
-          <ContentCell>{`${roadAddr} ${detailAddr}`}</ContentCell>
-          <ContentCell>{money}</ContentCell>
-          <ContentCell>{getKoreanDateByDate(createdAt)}</ContentCell>
-        </BoardItem>
+        <BoardRow key={id} {...{ id }} {...{ status }} onRemove={handleRemove}>
+          <BoardColumn>{name}</BoardColumn>
+          <BoardColumn>{email}</BoardColumn>
+          <BoardColumn>{phoneNumber}</BoardColumn>
+          <BoardColumn>{`${roadAddr} ${detailAddr}`}</BoardColumn>
+          <BoardColumn>{money}</BoardColumn>
+          <BoardColumn>{getKoreanDateByDate(createdAt)}</BoardColumn>
+        </BoardRow>
       );
     }
   );
 
-  return <ContentList>{mapedData}</ContentList>;
+  return <BoardContainer>{mapedData}</BoardContainer>;
 };
 
 export default UserBoard;

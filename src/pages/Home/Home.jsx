@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Container, Title, Strong, BoardContainer } from './styled';
+import { Container, Title, Strong, BoardWrapper } from './styled';
 
 import { Category, Menu, Partners, Users, Prices } from '@/components';
 import withLoginConfirm from '@/hocs/withLoginConfirm';
@@ -14,12 +14,12 @@ const Home = () => {
         <Strong>관리자</Strong>님 안녕하세요.
       </Title>
       <Menu onSetMenuStatus={setMenuStatus} />
-      <BoardContainer>
+      <BoardWrapper>
         <Category status={menuStatus} />
         {menuStatus === 'users' && <Users status={menuStatus} />}
-        {menuStatus === 'partners' && <Partners />}
-        {menuStatus === 'prices' && <Prices />}
-      </BoardContainer>
+        {menuStatus === 'partners' && <Partners status={menuStatus} />}
+        {menuStatus === 'prices' && <Prices status={menuStatus} />}
+      </BoardWrapper>
     </Container>
   );
 };

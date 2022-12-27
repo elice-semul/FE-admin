@@ -1,5 +1,5 @@
 export const categoryMock = {
-  prices: ['품목', '가격'],
+  prices: ['카테고리', '상품명', '가격'],
   users: ['이름', '이메일', '전화번호', '주소', '지갑', '회원가입 일시'],
   partners: ['이름', '이메일'],
   historys: ['일시', '내용', '금액'],

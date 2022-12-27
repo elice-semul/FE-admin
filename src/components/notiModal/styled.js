@@ -24,15 +24,6 @@ export const ModalContentContainer = styled.div`
   cursor: default;
 `;
 
-export const ModalTitle = styled.h2`
-  min-height: 3.6rem;
-  margin: 0px 0px 1.2rem;
-  font-size: 2.4rem;
-  word-break: break-all;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-`;
-
 export const ModalDesc = styled.p`
   margin-bottom: 2.4rem;
   display: flex;

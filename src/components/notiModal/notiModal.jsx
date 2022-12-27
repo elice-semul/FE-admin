@@ -1,5 +1,4 @@
 import {
-  ModalTitle,
   ModalDesc,
   ButtonContainer,
   ModalButton,
@@ -7,7 +6,7 @@ import {
   ModalContentContainer,
 } from './styled';
 
-const Modal = ({ onSetIsShowingModal, text }) => {
+const NotiModal = ({ onSetIsShowingModal, text }) => {
   const handleModalLayoutClick = (event) => {
     event.stopPropagation();
     onSetIsShowingModal(false);
@@ -31,4 +30,4 @@ const Modal = ({ onSetIsShowingModal, text }) => {
   );
 };
 
-export default Modal;
+export default NotiModal;

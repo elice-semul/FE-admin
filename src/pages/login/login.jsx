@@ -4,7 +4,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { Container, Title, Form, InputContainer, Input, RequiredText, JoinButton } from './styled';
 
 import useLogin from '@/hooks/useLogin';
-import PortalModal from '@/portals/portalModal';
+import PortalNoti from '@/portals/portalNoti';
 import { getErrorMessage } from '@/utils/errorMessage';
 
 const Login = () => {
@@ -57,7 +57,7 @@ const Login = () => {
         </JoinButton>
       </Form>
       {isShowingModal && (
-        <PortalModal
+        <PortalNoti
           onSetIsShowingModal={setIsShowingModal}
           text={getErrorMessage(loginAdmin.error)}
         />
