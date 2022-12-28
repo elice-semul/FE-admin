@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Container, Title, Strong, BoardWrapper } from './styled';
 
-import { Category, Menu, Partners, Users, Prices } from '@/components';
+import { Category, Menu, Partners, Users, Prices, Orders } from '@/components';
 import withLoginConfirm from '@/hocs/withLoginConfirm';
 
 const Home = () => {
@@ -16,9 +16,10 @@ const Home = () => {
       <Menu onSetMenuStatus={setMenuStatus} />
       <BoardWrapper>
         <Category status={menuStatus} />
+        {menuStatus === 'prices' && <Prices status={menuStatus} />}
         {menuStatus === 'users' && <Users status={menuStatus} />}
         {menuStatus === 'partners' && <Partners status={menuStatus} />}
-        {menuStatus === 'prices' && <Prices status={menuStatus} />}
+        {menuStatus === 'orders' && <Orders status={menuStatus} />}
       </BoardWrapper>
     </Container>
   );

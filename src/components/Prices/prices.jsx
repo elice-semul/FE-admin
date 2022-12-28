@@ -9,7 +9,7 @@ import { BoardContainer } from '@/styles/board';
 
 const Prices = ({ status }) => {
   const [type, setType] = useState('create');
-  const [updateInfo, setUpdateInfo] = useState({
+  const [priceInfo, setPriceInfo] = useState({
     id: '',
     category: '',
     name: '',
@@ -47,11 +47,11 @@ const Prices = ({ status }) => {
 
   const handleUpdateButtonClick = (id, category, name, price) => {
     setIsShowingModal(true);
-    setUpdateInfo({ id, category, name, price });
+    setPriceInfo({ id, category, name, price });
   };
 
   const handleModalUpdateButtonClick = () => {
-    const { id, category, name, price } = updateInfo;
+    const { id, category, name, price } = priceInfo;
 
     if (!id || !category || !name || !price) {
       return;
@@ -83,8 +83,8 @@ const Prices = ({ status }) => {
       </AddButton>
       {isShowingModal && (
         <PortalPriceForm
-          {...{ updateInfo }}
-          onSetUpdateInfo={setUpdateInfo}
+          {...{ priceInfo }}
+          onSetPriceInfo={setPriceInfo}
           onSetIsShowingModal={setIsShowingModal}
           onAddFormSubmit={handleAddFormSubmit}
           onUpdateButtonClick={handleModalUpdateButtonClick}

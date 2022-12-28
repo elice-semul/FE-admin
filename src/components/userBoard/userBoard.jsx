@@ -12,18 +12,16 @@ const UserBoard = ({ data, status, onRemove: handleRemove }) => {
       address: { roadAddr, detailAddr },
       createdAt,
       wallet: { money },
-    }) => {
-      return (
-        <BoardRow key={id} {...{ id }} {...{ status }} onRemove={handleRemove}>
-          <BoardColumn>{name}</BoardColumn>
-          <BoardColumn>{email}</BoardColumn>
-          <BoardColumn>{phoneNumber}</BoardColumn>
-          <BoardColumn>{`${roadAddr} ${detailAddr}`}</BoardColumn>
-          <BoardColumn>{money}</BoardColumn>
-          <BoardColumn>{getKoreanDateByDate(createdAt)}</BoardColumn>
-        </BoardRow>
-      );
-    }
+    }) => (
+      <BoardRow key={id} {...{ id }} {...{ status }} onRemove={handleRemove}>
+        <BoardColumn>{name}</BoardColumn>
+        <BoardColumn>{email}</BoardColumn>
+        <BoardColumn>{phoneNumber}</BoardColumn>
+        <BoardColumn>{`${roadAddr} ${detailAddr}`}</BoardColumn>
+        <BoardColumn>{money}</BoardColumn>
+        <BoardColumn>{getKoreanDateByDate(createdAt)}</BoardColumn>
+      </BoardRow>
+    )
   );
 
   return <BoardContainer>{mapedData}</BoardContainer>;

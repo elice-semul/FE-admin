@@ -9,7 +9,11 @@ const BoardRow = ({
   id,
   status,
   category,
+  address,
   name,
+  phoneNumber,
+  bizNo,
+  isApprove,
   price,
   onSetType,
   onUpdate,
@@ -25,10 +29,19 @@ const BoardRow = ({
     setShowingLayout(false);
   };
 
+  const handleApproveButtonClick = (event) => {
+    event.stopPropagation();
+  };
+
   const handleUpdateButtonClick = (event) => {
     event.stopPropagation();
-    onSetType('update');
-    onUpdate(id, category, name, price);
+
+    if (status === 'prices') {
+      onSetType('update');
+      onUpdate(id, category, name, price);
+    } else if (status === 'partners') {
+      onUpdate(id, address, name, phoneNumber, bizNo);
+    }
   };
 
   const handleRemoveButtonClick = (event) => {
@@ -41,6 +54,11 @@ const BoardRow = ({
       {isShowingLayout && (
         <MenuLayout>
           <ButtonContainer>
+            {status === 'partners' && !isApprove && (
+              <MenuButton type="button" onClick={handleApproveButtonClick}>
+                승인
+              </MenuButton>
+            )}
             {status !== 'users' && (
               <MenuButton type="button" onClick={handleUpdateButtonClick}>
                 수정
