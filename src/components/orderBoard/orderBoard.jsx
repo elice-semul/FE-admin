@@ -1,5 +1,3 @@
-import { Container } from './styled';
-
 import { BoardRow } from '@/components/ui';
 import { BoardContainer, BoardColumn, BoardColumnContainer } from '@/styles/board';
 
@@ -26,15 +24,15 @@ const OrderBoard = ({ data, status, onUpdate: handleUpdate, onRemove: handleRemo
             onUpdate={handleUpdate}
             onRemove={handleRemove}
           >
-            <BoardColumn>{orderNum}</BoardColumn>
-            <BoardColumn>{notice}</BoardColumn>
-            <BoardColumn>{email}</BoardColumn>
-            <BoardColumn>{phoneNumber}</BoardColumn>
-            <BoardColumn>{name}</BoardColumn>
-            <BoardColumn>{laundryPhoneNumber}</BoardColumn>
-            <BoardColumn>{`${roadAddr} ${detailAddr} ${jibun}`}</BoardColumn>
-            <BoardColumn>{pickUpMethod}</BoardColumn>
-            <BoardColumn>{orderStatus}</BoardColumn>
+            <BoardColumn {...{ status }}>{orderNum}</BoardColumn>
+            <BoardColumn {...{ status }}>{notice}</BoardColumn>
+            <BoardColumn {...{ status }}>{email}</BoardColumn>
+            <BoardColumn {...{ status }}>{phoneNumber}</BoardColumn>
+            <BoardColumn {...{ status }}>{name}</BoardColumn>
+            <BoardColumn {...{ status }}>{laundryPhoneNumber}</BoardColumn>
+            <BoardColumn {...{ status }}>{`${roadAddr} ${detailAddr} ${jibun}`}</BoardColumn>
+            <BoardColumn {...{ status }}>{pickUpMethod}</BoardColumn>
+            <BoardColumn {...{ status }}>{orderStatus}</BoardColumn>
           </BoardRow>
         </BoardColumnContainer>
       );

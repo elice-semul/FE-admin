@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BoardColumnBasis } from '@/styles/board';
+
 const getBoardHeaderListWidth = (status) => {
   switch (status) {
     case 'prices':
@@ -9,7 +11,7 @@ const getBoardHeaderListWidth = (status) => {
     case 'partners':
       return '1500px';
     case 'orders':
-      return '2340px';
+      return '3240px';
     default:
       return '0px';
   }
@@ -47,4 +49,6 @@ export const BoardHeaderList = styled.ul`
 
 export const BoardHeaderItem = styled.li`
   flex-basis: 200px;
+
+  ${({ status }) => status === 'orders' && BoardColumnBasis};
 `;

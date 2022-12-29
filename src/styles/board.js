@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const BoardColumnBasis = css`
+export const BoardColumnBasis = css`
   flex-basis: 300px;
 `;
 
@@ -33,11 +33,12 @@ export const BoardColumn = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+  padding-left: 1.6rem;
   width: 100%;
   height: 100%;
   display: flex;
   gap: 1.6rem;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `;
 

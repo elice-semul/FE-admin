@@ -15,7 +15,7 @@ const getBoardHeaderListWidth = (status) => {
     case 'partners':
       return '1500px';
     case 'orders':
-      return '2340px';
+      return '3240px';
     default:
       return '0px';
   }

@@ -4,7 +4,9 @@ import { categoryMock } from '@/mocks/mocks';
 
 const Category = ({ status }) => {
   const mapedCategoryMock = categoryMock[status].map((el, index) => (
-    <BoardHeaderItem key={index}>{el}</BoardHeaderItem>
+    <BoardHeaderItem key={index} {...{ status }}>
+      {el}
+    </BoardHeaderItem>
   ));
 
   return (
