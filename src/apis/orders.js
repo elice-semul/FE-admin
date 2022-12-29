@@ -13,7 +13,7 @@ export const getOrders = async (search) => {
     return res.data;
   }
 
-  const res = await axios.get(`${import.meta.env.VITE_BASE}/admin/orders/?email=${search}`, {
+  const res = await axios.get(`${import.meta.env.VITE_BASE}/admin/orders?email=${search}`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${Session.getItem('accessToken')}`,
