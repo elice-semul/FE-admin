@@ -1,4 +1,4 @@
-import { BoardHeaderList, BoardHeaderItem } from './styled';
+import { Container, BoardHeaderList, BoardHeaderItem } from './styled';
 
 import { categoryMock } from '@/mocks/mocks';
 
@@ -7,7 +7,11 @@ const Category = ({ status }) => {
     <BoardHeaderItem key={index}>{el}</BoardHeaderItem>
   ));
 
-  return <BoardHeaderList>{mapedCategoryMock}</BoardHeaderList>;
+  return (
+    <Container {...{ status }}>
+      <BoardHeaderList {...{ status }}>{mapedCategoryMock}</BoardHeaderList>
+    </Container>
+  );
 };
 
 export default Category;

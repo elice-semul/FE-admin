@@ -8,7 +8,7 @@ const PriceBoard = ({
   onUpdate: handleUpdate,
   onRemove: handleRemove,
 }) => {
-  const mapedData = data.map(({ id, category, name, price }) => {
+  const mapedData = data.map(({ id, category, name, price, isApprove }) => {
     return (
       <BoardRow
         key={id}
@@ -17,13 +17,14 @@ const PriceBoard = ({
         {...{ category }}
         {...{ name }}
         {...{ price }}
+        {...{ isApprove }}
         {...{ onSetType }}
         onUpdate={handleUpdate}
         onRemove={handleRemove}
       >
         <BoardColumn>{category}</BoardColumn>
-        <BoardColumn>{price}</BoardColumn>
         <BoardColumn>{name}</BoardColumn>
+        <BoardColumn>{price}</BoardColumn>
       </BoardRow>
     );
   });

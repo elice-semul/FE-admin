@@ -1,6 +1,11 @@
 import Category from './category/category';
 import Menu from './menu/menu';
 import NotiModal from './notiModal/notiModal';
+import OrderBoard from './orderBoard/orderBoard';
+import OrderFormModal from './orderFormModal/orderFormModal';
+import Orders from './orders/orders';
+import PartnerBoard from './partnerBoard/partnerBoard';
+import PartnerFormModal from './partnerFormModal/partnerFormModal';
 import Partners from './partners/partners';
 import PriceBoard from './priceBoard/priceBoard';
 import PriceFormModal from './priceFormModal/priceFormModal';
@@ -13,6 +18,11 @@ export {
   Category,
   Menu,
   NotiModal,
+  OrderBoard,
+  OrderFormModal,
+  Orders,
+  PartnerBoard,
+  PartnerFormModal,
   Partners,
   PriceBoard,
   PriceFormModal,

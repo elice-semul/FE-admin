@@ -11,8 +11,8 @@ import {
 } from './styled';
 
 const PriceFormModal = ({
-  updateInfo,
-  onSetUpdateInfo,
+  priceInfo,
+  onSetPriceInfo,
   onSetIsShowingModal,
   onAddFormSubmit: handleAddFormSubmit,
   onUpdateButtonClick: handleUpdateButtonClick,
@@ -35,8 +35,8 @@ const PriceFormModal = ({
     event.stopPropagation();
   };
 
-  const handleUpdateInfoChange = ({ target }) => {
-    onSetUpdateInfo((prev) => ({ ...prev, [target.name]: target.value }));
+  const handlePriceInfoChange = ({ target }) => {
+    onSetPriceInfo((prev) => ({ ...prev, [target.name]: target.value }));
   };
 
   if (type === 'create') {
@@ -71,30 +71,29 @@ const PriceFormModal = ({
       <ModalContentContainer onClick={handleModalContentContainerClick}>
         <InputContainer>
           <Input
+            name="category"
             type="text"
-            defaultValue={updateInfo.category}
+            defaultValue={priceInfo.category}
             placeholder="카테고리"
-            {...register('category')}
-            onChange={handleUpdateInfoChange}
+            onChange={handlePriceInfoChange}
           />
         </InputContainer>
         <InputContainer>
           <Input
+            name="name"
             type="text"
-            defaultValue={updateInfo.name}
+            defaultValue={priceInfo.name}
             placeholder="상품명"
-            {...register('name')}
-            onChange={handleUpdateInfoChange}
+            onChange={handlePriceInfoChange}
           />
         </InputContainer>
         <InputContainer>
           <Input
             name="price"
             type="text"
-            defaultValue={updateInfo.price}
+            defaultValue={priceInfo.price}
             placeholder="가격"
-            {...register('price')}
-            onChange={handleUpdateInfoChange}
+            onChange={handlePriceInfoChange}
           />
         </InputContainer>
         <FormButton type="button" onClick={handleUpdateButtonClick}>
