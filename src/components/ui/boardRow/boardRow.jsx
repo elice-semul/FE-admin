@@ -12,8 +12,24 @@ import {
 
 import { historyCategoryMock } from '@/mocks/mocks';
 import PortalNoti from '@/portals/portalNoti';
+import PortalRemoveNoti from '@/portals/portalRemoveNoti';
 import { BoardColumn, ButtonContainer } from '@/styles/board';
 import { getKoreanDateByDate } from '@/utils/date';
+
+const getRemoveTextByStatus = (status) => {
+  switch (status) {
+    case 'prices':
+      return '상품을 제거하시겠습니까?';
+    case 'users':
+      return '유저를 제거하시겠습니까?';
+    case 'partners':
+      return '파트너를 제거하시겠습니까?';
+    case 'orders':
+      return '이용내역을 제거하시겠습니까?';
+    default:
+      return '';
+  }
+};
 
 const BoardRow = ({
   children,
@@ -36,6 +52,7 @@ const BoardRow = ({
   const [isShowingLayout, setShowingLayout] = useState(false);
   const [isShowingApproveModal, setIsShowingApproveModal] = useState(false);
   const [isShowingOrderHistory, setIsShowingOrderHistory] = useState(false);
+  const [isShowingNotiMdoal, setIsShowingNotiModal] = useState(false);
 
   const handleContainerMouseOver = () => {
     setShowingLayout(true);
@@ -70,6 +87,10 @@ const BoardRow = ({
 
   const handleRemoveButtonClick = (event) => {
     event.stopPropagation();
+    setIsShowingNotiModal(true);
+  };
+
+  const handleRemoveConfirmButtonClick = () => {
     onRemove(id);
   };
 
@@ -109,6 +130,13 @@ const BoardRow = ({
           <PortalNoti
             onSetIsShowingModal={setIsShowingApproveModal}
             text="파트너가 승인되었습니다."
+          />
+        )}
+        {isShowingNotiMdoal && (
+          <PortalRemoveNoti
+            onSetIsShowingModal={setIsShowingNotiModal}
+            text={getRemoveTextByStatus(status)}
+            onRemove={handleRemoveConfirmButtonClick}
           />
         )}
       </Container>
@@ -166,6 +194,13 @@ const BoardRow = ({
           <PortalNoti
             onSetIsShowingModal={setIsShowingApproveModal}
             text="파트너가 승인되었습니다."
+          />
+        )}
+        {isShowingNotiMdoal && (
+          <PortalRemoveNoti
+            onSetIsShowingModal={setIsShowingNotiModal}
+            text={getRemoveTextByStatus(status)}
+            onRemove={handleRemoveConfirmButtonClick}
           />
         )}
       </Container>

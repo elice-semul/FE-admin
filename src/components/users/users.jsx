@@ -20,7 +20,6 @@ const Users = ({ status }) => {
 
   const handleRemoveButtonClick = (id) => {
     removeUser.mutate({ id });
-    setIsShowingModal(true);
   };
 
   return (

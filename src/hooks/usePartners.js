@@ -25,7 +25,10 @@ const usePartners = () => {
   });
 
   const removePartner = useMutation(['partners'], deletePartner, {
-    onSuccess: () => queryClient.invalidateQueries(['partners']),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['partners']);
+      setIsShowingNotiModal(true);
+    },
   });
 
   return {

@@ -4,6 +4,7 @@ import { AddButton } from './styled';
 
 import { PriceBoard, Spinner } from '@/components';
 import { usePrices } from '@/hooks';
+import PortalNoti from '@/portals/portalNoti';
 import PortalPriceForm from '@/portals/portalPriceForm';
 import { BoardContainer } from '@/styles/board';
 
@@ -18,6 +19,8 @@ const Prices = ({ status }) => {
   const {
     isShowingModal,
     setIsShowingModal,
+    isShowingNotiModal,
+    setIsShowingNotiModal,
     data,
     isLoading,
     createPrice,
@@ -81,6 +84,9 @@ const Prices = ({ status }) => {
       <AddButton type="button" onClick={handleAddButtonClick}>
         상품 등록
       </AddButton>
+      {isShowingNotiModal && (
+        <PortalNoti onSetIsShowingModal={setIsShowingNotiModal} text="상품이 삭제되었습니다." />
+      )}
       {isShowingModal && (
         <PortalPriceForm
           {...{ priceInfo }}

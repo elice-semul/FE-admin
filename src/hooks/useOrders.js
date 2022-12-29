@@ -20,7 +20,10 @@ const useOrders = (search) => {
   });
 
   const removeOrder = useMutation(['orders'], deleteOrder, {
-    onSuccess: () => queryClient.invalidateQueries(['orders']),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['orders']);
+      setIsShowingNotiModal(true);
+    },
   });
 
   return {

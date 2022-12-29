@@ -66,7 +66,6 @@ const Orders = ({ status }) => {
 
   const handleRemoveButtonClick = (id) => {
     removeOrder.mutate({ id });
-    setIsShowingNotiModal(true);
   };
 
   return (

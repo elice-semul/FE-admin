@@ -8,8 +8,8 @@ export const ModalLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.35);
+  /* cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.35); */
 `;
 
 export const ModalContentContainer = styled.div`
@@ -20,6 +20,7 @@ export const ModalContentContainer = styled.div`
   position: relative;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.background};
+  border: 2px solid ${({ theme }) => theme.colors.primary};
   border-radius: 4px;
   cursor: default;
 `;

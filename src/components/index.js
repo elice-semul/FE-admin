@@ -10,6 +10,7 @@ import Partners from './partners/partners';
 import PriceBoard from './priceBoard/priceBoard';
 import PriceFormModal from './priceFormModal/priceFormModal';
 import Prices from './prices/prices';
+import RemoveNotiModal from './removeNotiModal/removeNotiModal';
 import Spinner from './spinner/spinner';
 import UserBoard from './userBoard/userBoard';
 import Users from './users/users';
@@ -27,6 +28,7 @@ export {
   PriceBoard,
   PriceFormModal,
   Prices,
+  RemoveNotiModal,
   Spinner,
   UserBoard,
   Users,

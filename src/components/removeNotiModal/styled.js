@@ -8,8 +8,8 @@ export const ModalLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* cursor: pointer; */
-  /* background-color: rgba(0, 0, 0, 0.35); */
+  /* cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.35); */
 `;
 
 export const ModalContentContainer = styled.div`
@@ -34,6 +34,7 @@ export const ModalDesc = styled.p`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  gap: 1.6rem;
 `;
 
 export const ModalButton = styled.button`

@@ -6,9 +6,9 @@ const OrderBoard = ({ data, status, onUpdate: handleUpdate, onRemove: handleRemo
     ({
       id,
       orderNum,
-      user: { email, phoneNumber },
+      user,
       address: { roadAddr, detailAddr, jibun },
-      laundry: { name, phoneNumber: laundryPhoneNumber },
+      laundry,
       orderProducts,
       status: orderStatus,
       pickUpMethod,
@@ -26,10 +26,10 @@ const OrderBoard = ({ data, status, onUpdate: handleUpdate, onRemove: handleRemo
           >
             <BoardColumn {...{ status }}>{orderNum}</BoardColumn>
             <BoardColumn {...{ status }}>{notice}</BoardColumn>
-            <BoardColumn {...{ status }}>{email}</BoardColumn>
-            <BoardColumn {...{ status }}>{phoneNumber}</BoardColumn>
-            <BoardColumn {...{ status }}>{name}</BoardColumn>
-            <BoardColumn {...{ status }}>{laundryPhoneNumber}</BoardColumn>
+            <BoardColumn {...{ status }}>{user?.email ?? '없음'}</BoardColumn>
+            <BoardColumn {...{ status }}>{user?.phoneNumber ?? '없음'}</BoardColumn>
+            <BoardColumn {...{ status }}>{laundry?.name ?? '없음'}</BoardColumn>
+            <BoardColumn {...{ status }}>{laundry?.phoneNumber ?? '없음'}</BoardColumn>
             <BoardColumn {...{ status }}>{`${roadAddr} ${detailAddr} ${jibun}`}</BoardColumn>
             <BoardColumn {...{ status }}>{pickUpMethod}</BoardColumn>
             <BoardColumn {...{ status }}>{orderStatus}</BoardColumn>

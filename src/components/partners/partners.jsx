@@ -71,7 +71,6 @@ const Partners = ({ status }) => {
 
   const handleRemoveButtonClick = (id) => {
     removePartner.mutate({ id });
-    setIsShowingNotiModal(true);
   };
 
   return (

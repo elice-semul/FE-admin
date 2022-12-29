@@ -12,7 +12,10 @@ const useUsers = () => {
   });
 
   const removeUser = useMutation(['users'], deleteUser, {
-    onSuccess: () => queryClient.invalidateQueries(['users']),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['users']);
+      setIsShowingModal(true);
+    },
   });
 
   return { isShowingModal, setIsShowingModal, data, isLoading, removeUser };

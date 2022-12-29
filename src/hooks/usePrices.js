@@ -5,6 +5,7 @@ import { deletePrice, getPrices, postPrice, putPrice } from '@/apis/prices';
 
 const usePrices = () => {
   const [isShowingModal, setIsShowingModal] = useState(false);
+  const [isShowingNotiModal, setIsShowingNotiModal] = useState(false);
   const queryClient = useQueryClient();
 
   const { data, isLoading } = useQuery(['prices'], getPrices, {
@@ -26,12 +27,17 @@ const usePrices = () => {
   });
 
   const removePrice = useMutation(['prices'], deletePrice, {
-    onSuccess: () => queryClient.invalidateQueries(['prices']),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['prices']);
+      setIsShowingNotiModal(true);
+    },
   });
 
   return {
     isShowingModal,
     setIsShowingModal,
+    isShowingNotiModal,
+    setIsShowingNotiModal,
     data,
     isLoading,
     createPrice,
