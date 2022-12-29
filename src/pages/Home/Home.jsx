@@ -11,7 +11,9 @@ const Home = () => {
   return (
     <Container>
       <Title>
-        <Strong>관리자</Strong>님 안녕하세요.
+        <div>
+          <Strong>관리자</Strong>님 안녕하세요.
+        </div>
       </Title>
       <Menu onSetMenuStatus={setMenuStatus} />
       <BoardWrapper>

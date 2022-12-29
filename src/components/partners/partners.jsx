@@ -7,7 +7,7 @@ import PortalPartnerForm from '@/portals/portalPartnerForm';
 import { BoardContainer } from '@/styles/board';
 
 const Partners = ({ status }) => {
-  const [partnerInfo, setPatnerInfo] = useState({
+  const [partnerInfo, setPartnerInfo] = useState({
     id: '',
     name: '',
     address: {
@@ -25,6 +25,7 @@ const Partners = ({ status }) => {
     setIsShowingFormModal,
     data,
     isLoading,
+    createPartnerApprove,
     updatePartner,
     removePartner,
   } = usePartners();
@@ -41,11 +42,15 @@ const Partners = ({ status }) => {
     return null;
   }
 
+  const handleApproveButtonClick = (id) => {
+    createPartnerApprove.mutate({ id });
+  };
+
   const handleUpdateButtonClick = (id, address, name, phoneNumber, bizNo) => {
     const { roadAddr, detailAddr, jibun } = address;
 
     setIsShowingFormModal(true);
-    setPatnerInfo({ id, name, address: { roadAddr, detailAddr, jibun }, phoneNumber, bizNo });
+    setPartnerInfo({ id, name, address: { roadAddr, detailAddr, jibun }, phoneNumber, bizNo });
   };
 
   const handleModalUpdateButtonClick = () => {
@@ -74,6 +79,7 @@ const Partners = ({ status }) => {
       <PartnerBoard
         {...{ data }}
         {...{ status }}
+        onApprove={handleApproveButtonClick}
         onUpdate={handleUpdateButtonClick}
         onRemove={handleRemoveButtonClick}
       />
@@ -83,7 +89,7 @@ const Partners = ({ status }) => {
       {isShowingFormModal && (
         <PortalPartnerForm
           {...{ partnerInfo }}
-          onSetPartnerInfo={setPatnerInfo}
+          onSetPartnerInfo={setPartnerInfo}
           onSetIsShowingModal={setIsShowingFormModal}
           onUpdateButtonClick={handleModalUpdateButtonClick}
           updateLoading={updatePartner.isLoading}

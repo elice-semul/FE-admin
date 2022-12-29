@@ -8,6 +8,8 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h2`
+  display: flex;
+  justify-content: space-between;
   font-size: 2.8rem;
   font-weight: 700;
 `;

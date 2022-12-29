@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 
-import { deletePartner, getPartners, putPartner } from '@/apis/partners';
+import { deletePartner, postPartnerApprove, getPartners, putPartner } from '@/apis/partners';
 
 const usePartners = () => {
   const queryClient = useQueryClient();
@@ -9,6 +9,13 @@ const usePartners = () => {
   const [isShowingFormModal, setIsShowingFormModal] = useState(false);
 
   const { data, isLoading } = useQuery(['partners'], getPartners);
+
+  const createPartnerApprove = useMutation(['partners'], postPartnerApprove, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(['partners']);
+      setIsShowingFormModal(false);
+    },
+  });
 
   const updatePartner = useMutation(['partners'], putPartner, {
     onSuccess: () => {
@@ -28,6 +35,7 @@ const usePartners = () => {
     setIsShowingFormModal,
     data,
     isLoading,
+    createPartnerApprove,
     updatePartner,
     removePartner,
   };
