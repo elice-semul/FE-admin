@@ -26,10 +26,10 @@ const OrderBoard = ({ data, status, onUpdate: handleUpdate, onRemove: handleRemo
           >
             <BoardColumn {...{ status }}>{orderNum}</BoardColumn>
             <BoardColumn {...{ status }}>{notice}</BoardColumn>
-            <BoardColumn {...{ status }}>{user?.email ?? '없음'}</BoardColumn>
-            <BoardColumn {...{ status }}>{user?.phoneNumber ?? '없음'}</BoardColumn>
-            <BoardColumn {...{ status }}>{laundry?.name ?? '없음'}</BoardColumn>
-            <BoardColumn {...{ status }}>{laundry?.phoneNumber ?? '없음'}</BoardColumn>
+            <BoardColumn {...{ status }}>{user?.email ?? '제거됨'}</BoardColumn>
+            <BoardColumn {...{ status }}>{user?.phoneNumber ?? '제거됨'}</BoardColumn>
+            <BoardColumn {...{ status }}>{laundry?.name ?? '제거됨'}</BoardColumn>
+            <BoardColumn {...{ status }}>{laundry?.phoneNumber ?? '제거됨'}</BoardColumn>
             <BoardColumn {...{ status }}>{`${roadAddr} ${detailAddr} ${jibun}`}</BoardColumn>
             <BoardColumn {...{ status }}>{pickUpMethod}</BoardColumn>
             <BoardColumn {...{ status }}>{orderStatus}</BoardColumn>
