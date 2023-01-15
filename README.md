@@ -5,6 +5,34 @@
 - 해당 레포는 어드민 레포입니다.
 - [서비스 레포](https://github.com/elice-semul/FE-semul)
 
+## 1. 배포
+
+계정
+
+```
+일반 유저
+email: test1@user.com
+password: 1234
+```
+
+[서비스 링크](http://kdt-sw3-team13.elicecoding.com)
+
+```
+파트너 유저
+email: partner1@user.com
+password: 1234
+```
+
+[파트너 링크](http://semul.s3-website.ap-northeast-2.amazonaws.com)
+
+```
+어드민 유저
+email: admin1@user.com
+password: 1234
+```
+
+[어드민 링크](http://semul-admin.s3-website.ap-northeast-2.amazonaws.com/)
+
 ## 1. 서비스 주요 기능 설명
 
 https://user-images.githubusercontent.com/116259958/210035048-d6d40816-5c77-42d9-a827-1f84d16c5861.mp4
